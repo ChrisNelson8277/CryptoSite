@@ -46,7 +46,7 @@ const HomeTable = (props) => {
                         <NumberFormat value={crypto.current_price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
                     </td>
                     <td className='hidden-small'>
-                        <div className='24h-hl'><NumberFormat value={crypto.high_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/>/<br/><NumberFormat value={crypto.low_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
+                        <div className='24h-hl'><NumberFormat value={crypto.high_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/><NumberFormat value={crypto.low_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
                     </td>
                     <td>
                     <div className=''><NumberFormat value={crypto.price_change_percentage_24h} format ={"######%"} displayType={'text'} thousandSeparator={true} suffix={'%'}/></div>

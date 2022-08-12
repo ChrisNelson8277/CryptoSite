@@ -1,0 +1,28 @@
+.trending-container{
+    width: 90%;
+    margin: auto;
+}
+.trending-coins{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    border-bottom: 2px solid black;
+}
+.trending-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.trending-name{
+    font-size: 0.7rem;
+}
+.trending-bit{
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+.trending-bit img{
+    height: 1rem;
+}
