@@ -2,9 +2,15 @@ import React from 'react'
 import '../css/HomeTable.css'
 import NumberFormat from 'react-number-format'
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+import { Link, useNavigate } from 'react-router-dom';
+import Coin from '../pages/Coin';
 
 const HomeTable = (props) => {
-
+    const navigate = useNavigate();
+    const goToCrypto = (id) => {
+        navigate(`/Coin/${id}`)
+    }
   return (
     <div className='table-container'>
         {(typeof props.cryptoData != "undefined") ? (
@@ -15,9 +21,9 @@ const HomeTable = (props) => {
                     <th>Market Cap #</th>
                     <th>Coin</th>
                     <th>Current Price</th>
-                    <th className='hidden-small'>24hr H/L</th>
+                    <th className='hidden-small'>24hr H|L</th>
                     <th>24hr %</th>
-                    <th>Spark</th>
+                    <th id='spark-head'>Spark</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,7 +36,8 @@ const HomeTable = (props) => {
                 }
             }).map((crypto) => {
                 return (
-                    <tr key={crypto.id}>
+                    
+                    <tr onClick={()=>{goToCrypto(crypto.id)}} >
                 <td>
                     {crypto.market_cap_rank}
                 </td>
@@ -43,15 +50,15 @@ const HomeTable = (props) => {
                     </div>
                 </td>
                     <td>
-                        <NumberFormat value={crypto.current_price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                    <NumberFormat value={crypto.current_price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
                     </td>
                     <td className='hidden-small'>
-                        <div className='24h-hl'><NumberFormat value={crypto.high_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/><NumberFormat value={crypto.low_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/></div>
+                        <div className='24h-hl'><NumberFormat value={crypto.high_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/><AiOutlineArrowUp style={{color:"green"}}/>|<NumberFormat value={crypto.low_24h} displayType={'text'} thousandSeparator={true} prefix={'$'}/><AiOutlineArrowDown style={{color:"red"}}/></div>
                     </td>
                     <td>
                     <div className=''><NumberFormat value={crypto.price_change_percentage_24h} format ={"######%"} displayType={'text'} thousandSeparator={true} suffix={'%'}/></div>
                     </td>
-                    <td><Sparklines data={crypto.sparkline_in_7d.price}>
+                    <td id="spark-cell"><Sparklines data={crypto.sparkline_in_7d.price}>
                         <SparklinesLine color='blue'/>
                         </Sparklines>
                     </td>

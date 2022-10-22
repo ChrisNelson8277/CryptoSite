@@ -11,6 +11,7 @@
     align-items: center;
     top: 0;
     padding: 0 3%;
+    max-width: 100%;
 }
 .nav-bar ul{
     display: flex;

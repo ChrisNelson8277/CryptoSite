@@ -1,6 +1,7 @@
 .trending-container{
     width: 90%;
     margin: auto;
+    font-size: 1.5rem;
 }
 .trending-coins{
     background-color: whitesmoke;
@@ -16,13 +17,26 @@
     justify-content: center;
 }
 .trending-name{
-    font-size: 0.7rem;
+    
 }
 .trending-bit{
     display: flex;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
 }
 .trending-bit img{
     height: 1rem;
+}
+@media (max-width:800px){
+    .trending-container{
+        font-size: 1rem;
+    }
+    .trending-bit{
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+    #spark-cell{
+        display: none;
+    }
 }

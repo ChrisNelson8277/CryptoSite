@@ -1,12 +1,14 @@
 .search{
     display: flex;
     align-items: flex-end;
-    justify-content: end;
+    justify-content: flex-end;
     margin-bottom: 1vh;
     padding: 0% 5%;
     width: 100%;
+    font-size: 1.5rem;
 }
 .search input{
     width: 50%;
     padding: 1%;
+    font-size: 1.5rem;
 }

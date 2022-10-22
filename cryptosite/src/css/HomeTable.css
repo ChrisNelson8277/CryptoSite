@@ -1,11 +1,12 @@
 .table-container{
-    width: 100%;
+    width: 90%;
     margin: auto;
     background-color: white;
     box-shadow: 0 5px 10px grey;
     display: grid;
     overflow: hidden;
     overflow-x: scroll;
+    font-size: 1.5rem;
 }
 .table-data{
     display: flex;
@@ -30,11 +31,32 @@ th{
 .hidden-small{
     display: none;
   
-  }
-  
+}
+a{
+    display: block;
+}
+.table-data{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+td:hover{
+    cursor: pointer;
+}
   @media (min-width:800px){
     .hidden-small{
       display: block;
+    }
+  }
+  @media(max-width:800px){
+    .table-container{
+        font-size: 0.8rem;
+    }
+    #spark-cell{
+        display: none;
+    }
+    #spark-head{
+        display: none;
     }
   }
   

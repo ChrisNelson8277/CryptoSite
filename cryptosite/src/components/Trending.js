@@ -10,11 +10,20 @@ const Trending = () => {
 
     useEffect(() => {
         fetch(url).then(resp => resp.json()
-        .then((data) => {setCurrentTrending(data.coins);console.log(data)}
+        .then((data) => {setCurrentTrending(data.coins);}
         
-        ));
+        ).then(sortCoin(currentTrending)));
         
       }, []);
+
+      console.log(currentTrending)
+      function sortCoin(a,b){
+        currentTrending.item.market_cap_rank.sort( function(a,b){
+          if (a>b) return 1;
+          if (a<b) return -1;
+          return 0;
+        })}
+      
 
   return (
     <div className='trending-container'>
@@ -27,7 +36,7 @@ const Trending = () => {
             </div>
             <div>
                 <div>Rank#{coins.item.market_cap_rank}</div>
-                <div className='trending-bit'><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579" alt="bitcoin"></img>{coins.item.price_btc}</div>
+                <div className='trending-bit'><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579" alt="bitcoin"></img>{coins.item.price_btc.toFixed(16)}</div>
             </div>
         </div>
       ))}

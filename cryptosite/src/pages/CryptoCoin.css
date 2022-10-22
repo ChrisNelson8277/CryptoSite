@@ -1,0 +1,132 @@
+.crypto-header{
+    text-transform: capitalize;
+    color: lightgray;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3vh;
+    background-color: white;
+}
+.market-container{
+    margin-top: 5vh;
+    width: 80%;
+    margin: auto;
+    border: 3px solid black;
+    margin-bottom: 3vh;
+    background-color: white;
+    padding: 1rem;
+}
+.market-rank{
+    display: flex;
+    text-align: left;
+    background-color: rgb(40, 194, 35);
+    padding: 0 0.3rem;
+    border-radius: 10px;
+    width: 15%;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    justify-content: center;
+}
+.market-rank h5{
+    padding: 0;
+    margin: 0;
+}
+.coin-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin:auto;
+    font-size: 1.5rem;
+    justify-items: center;
+}
+.market-cap{
+    font-size: 1.5rem;
+}
+.high-low{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
+}
+.coin-header{
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+}
+.coin-header h2{
+    padding: 0;
+    margin: 0;
+}
+.current-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.current-price::before{
+    content: 'Current Price';
+    position: absolute;
+    white-space: nowrap;
+    top: -0.5rem;
+    font-size: 1.3rem;
+    
+}
+.coin-about-container{
+    margin-top: 3vh;
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    border: 3px solid black;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+.coin-about-container p{
+    padding: 0.5rem;
+    text-align: center;
+}
+.coin-about-container a{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: lightblue;
+}
+.time-container{
+    width: 80%;
+    margin: auto;
+    border: 3px solid black;
+    background-color: white;
+    margin-bottom: 3vh;
+    padding: 1rem;
+}
+.time-container th{background-color: rgb(18, 234, 176);}
+.time-container td{background-color: rgb(255, 255, 255);padding: 0;
+margin: 0;}
+.time-container table{
+    width: 100%;
+}
+.spark-container{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    margin-bottom: 3vh;
+}
+.spark{
+    background-color: rgba(255, 255, 255, 0.619);
+}
+.time-container h2{
+    font-size: 2rem;
+}
+@media (max-width:800px){
+    .coin-info{
+        grid-template-columns: 100%;
+    }
+    .market-rank{
+        width: 35%;
+    }
+    td {
+        font-size: 1rem
+    }
+    .table{
+        overflow-x: scroll;
+    }
+}
