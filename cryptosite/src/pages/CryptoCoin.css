@@ -116,6 +116,9 @@ margin: 0;}
 .time-container h2{
     font-size: 2rem;
 }
+.search-container-container{
+    padding: 75rem;
+}
 @media (max-width:800px){
     .coin-info{
         grid-template-columns: 100%;

@@ -1,12 +1,21 @@
 .table-container{
-    width: 90%;
+    width: 100%;
     margin: auto;
     background-color: white;
     box-shadow: 0 5px 10px grey;
     display: grid;
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     font-size: 1.5rem;
+}
+.table-container-container{
+    width: 90%;
+    margin: auto;
+    font-size: 1.5rem;
+}
+.table-container-container h3{
+    color: white;
+    font-size: 2rem;
 }
 .table-data{
     display: flex;
