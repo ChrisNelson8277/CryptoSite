@@ -12,6 +12,7 @@ import {
 
 const Coin = (props) => {
   const params = useParams();
+  console.log(params.coinId, "coinId");
   const [currentCoin, setCurrentCoin] = useState();
   const [forceUpdate, setForceUpdate] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -20,21 +21,23 @@ const Coin = (props) => {
   useEffect(() => {
     fetch(url).then((resp) =>
       resp.json().then((data) => {
-        if (isLoading) {
-          return <p>Loading....</p>;
-        }
         if (data.error) {
           setCurrentCoin();
           setIsLoading(false);
+          console.log("didnt find coin");
           return;
         } else {
           setIsLoading(false);
           setCurrentCoin(data);
           setForceUpdate(Math.random());
+          console.log("found coin");
         }
       })
     );
   }, [props.searchTerms]);
+  if (isLoading) {
+    return <p>Loading....</p>;
+  }
 
   if (currentCoin === undefined) {
     return (
